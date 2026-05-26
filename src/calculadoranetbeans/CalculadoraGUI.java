@@ -30,115 +30,109 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
         tfValor = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
+        btCE = new javax.swing.JButton();
+        btC = new javax.swing.JButton();
+        btApagar = new javax.swing.JButton();
+        btDivisao = new javax.swing.JButton();
+        bt7 = new javax.swing.JButton();
+        bt8 = new javax.swing.JButton();
+        bt9 = new javax.swing.JButton();
+        btMultiplicacao = new javax.swing.JButton();
+        bt4 = new javax.swing.JButton();
+        bt5 = new javax.swing.JButton();
+        bt6 = new javax.swing.JButton();
+        btSubtracao = new javax.swing.JButton();
+        bt1 = new javax.swing.JButton();
+        bt2 = new javax.swing.JButton();
+        bt3 = new javax.swing.JButton();
+        btSoma = new javax.swing.JButton();
+        btMaisMenos = new javax.swing.JButton();
+        bt0 = new javax.swing.JButton();
+        btVirgula = new javax.swing.JButton();
+        btResultado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora POO");
 
         tfValor.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         tfValor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         tfValor.setText("0.00");
         tfValor.addActionListener(this::tfValorActionPerformed);
 
-        jPanel2.setLayout(new java.awt.GridLayout(6, 4));
+        jPanel2.setLayout(new java.awt.GridLayout(5, 4));
 
-        jButton1.setText("%");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        jPanel2.add(jButton1);
+        btCE.setText("CE");
+        btCE.addActionListener(this::btCEActionPerformed);
+        jPanel2.add(btCE);
 
-        jButton2.setText("CE");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        jPanel2.add(jButton2);
+        btC.setText("C");
+        btC.addActionListener(this::btCActionPerformed);
+        jPanel2.add(btC);
 
-        jButton3.setText("C");
-        jPanel2.add(jButton3);
+        btApagar.setText("<---");
+        jPanel2.add(btApagar);
 
-        jButton4.setText("<---");
-        jPanel2.add(jButton4);
+        btDivisao.setText("/");
+        jPanel2.add(btDivisao);
 
-        jButton5.setText("1/x");
-        jPanel2.add(jButton5);
+        bt7.setText("7");
+        bt7.addActionListener(this::bt7ActionPerformed);
+        jPanel2.add(bt7);
 
-        jButton6.setText("x2");
-        jPanel2.add(jButton6);
+        bt8.setText("8");
+        bt8.addActionListener(this::bt8ActionPerformed);
+        jPanel2.add(bt8);
 
-        jButton7.setText("x(1/2)");
-        jPanel2.add(jButton7);
+        bt9.setText("9");
+        bt9.addActionListener(this::bt9ActionPerformed);
+        jPanel2.add(bt9);
 
-        jButton8.setText("/");
-        jPanel2.add(jButton8);
+        btMultiplicacao.setText("X");
+        jPanel2.add(btMultiplicacao);
 
-        jButton9.setText("7");
-        jPanel2.add(jButton9);
+        bt4.setText("4");
+        bt4.addActionListener(this::bt4ActionPerformed);
+        jPanel2.add(bt4);
 
-        jButton10.setText("8");
-        jPanel2.add(jButton10);
+        bt5.setText("5");
+        bt5.addActionListener(this::bt5ActionPerformed);
+        jPanel2.add(bt5);
 
-        jButton11.setText("9");
-        jPanel2.add(jButton11);
+        bt6.setText("6");
+        bt6.addActionListener(this::bt6ActionPerformed);
+        jPanel2.add(bt6);
 
-        jButton12.setText("X");
-        jPanel2.add(jButton12);
+        btSubtracao.setText("-");
+        jPanel2.add(btSubtracao);
 
-        jButton13.setText("4");
-        jPanel2.add(jButton13);
+        bt1.setText("1");
+        bt1.addActionListener(this::bt1ActionPerformed);
+        jPanel2.add(bt1);
 
-        jButton14.setText("5");
-        jPanel2.add(jButton14);
+        bt2.setText("2");
+        bt2.addActionListener(this::bt2ActionPerformed);
+        jPanel2.add(bt2);
 
-        jButton15.setText("6");
-        jPanel2.add(jButton15);
+        bt3.setText("3");
+        bt3.addActionListener(this::bt3ActionPerformed);
+        jPanel2.add(bt3);
 
-        jButton16.setText("-");
-        jPanel2.add(jButton16);
+        btSoma.setText("+");
+        btSoma.addActionListener(this::btSomaActionPerformed);
+        jPanel2.add(btSoma);
 
-        jButton17.setText("1");
-        jPanel2.add(jButton17);
+        btMaisMenos.setText("+/-");
+        jPanel2.add(btMaisMenos);
 
-        jButton18.setText("2");
-        jPanel2.add(jButton18);
+        bt0.setText("0");
+        bt0.addActionListener(this::bt0ActionPerformed);
+        jPanel2.add(bt0);
 
-        jButton19.setText("3");
-        jButton19.addActionListener(this::jButton19ActionPerformed);
-        jPanel2.add(jButton19);
+        btVirgula.setText(",");
+        jPanel2.add(btVirgula);
 
-        jButton20.setText("+");
-        jButton20.addActionListener(this::jButton20ActionPerformed);
-        jPanel2.add(jButton20);
-
-        jButton21.setText("+/-");
-        jPanel2.add(jButton21);
-
-        jButton22.setText("0");
-        jPanel2.add(jButton22);
-
-        jButton23.setText(",");
-        jPanel2.add(jButton23);
-
-        jButton24.setText("=");
-        jPanel2.add(jButton24);
+        btResultado.setText("=");
+        jPanel2.add(btResultado);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,7 +142,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tfValor)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -157,7 +151,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -165,25 +159,73 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfValorActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tfValorActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCEActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btCEActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSomaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btSomaActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt3ActionPerformed
+        digita("3");
+    }//GEN-LAST:event_bt3ActionPerformed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
+    private void bt0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt0ActionPerformed
+        digita("0");
+    }//GEN-LAST:event_bt0ActionPerformed
 
+    private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
+        digita("1");
+    }//GEN-LAST:event_bt1ActionPerformed
+
+    private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt2ActionPerformed
+        digita("2");
+    }//GEN-LAST:event_bt2ActionPerformed
+
+    private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
+        digita("4");
+    }//GEN-LAST:event_bt4ActionPerformed
+
+    private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt5ActionPerformed
+        digita("5");
+    }//GEN-LAST:event_bt5ActionPerformed
+
+    private void bt6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt6ActionPerformed
+        digita("6");
+    }//GEN-LAST:event_bt6ActionPerformed
+
+    private void bt7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt7ActionPerformed
+        digita("7");
+    }//GEN-LAST:event_bt7ActionPerformed
+
+    private void bt8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt8ActionPerformed
+        digita("8");
+    }//GEN-LAST:event_bt8ActionPerformed
+
+    private void bt9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt9ActionPerformed
+        digita("9");
+    }//GEN-LAST:event_bt9ActionPerformed
+
+    private void btCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCActionPerformed
+        limpa();
+    }//GEN-LAST:event_btCActionPerformed
+    
+    private void limpa(){
+        tfValor.setText("0.00");
+    }
+    
+    private void digita(String caractere){
+        if(tfValor.getText().equals("0.00")){
+            tfValor.setText(caractere);
+        } else {
+            tfValor.setText(tfValor.getText().concat(caractere));
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -210,30 +252,26 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton bt0;
+    private javax.swing.JButton bt1;
+    private javax.swing.JButton bt2;
+    private javax.swing.JButton bt3;
+    private javax.swing.JButton bt4;
+    private javax.swing.JButton bt5;
+    private javax.swing.JButton bt6;
+    private javax.swing.JButton bt7;
+    private javax.swing.JButton bt8;
+    private javax.swing.JButton bt9;
+    private javax.swing.JButton btApagar;
+    private javax.swing.JButton btC;
+    private javax.swing.JButton btCE;
+    private javax.swing.JButton btDivisao;
+    private javax.swing.JButton btMaisMenos;
+    private javax.swing.JButton btMultiplicacao;
+    private javax.swing.JButton btResultado;
+    private javax.swing.JButton btSoma;
+    private javax.swing.JButton btSubtracao;
+    private javax.swing.JButton btVirgula;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables
