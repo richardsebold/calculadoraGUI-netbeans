@@ -28,21 +28,161 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tfValor = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tfValor.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        tfValor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        tfValor.setText("0.00");
+        tfValor.addActionListener(this::tfValorActionPerformed);
+
+        jPanel2.setLayout(new java.awt.GridLayout(6, 4));
+
+        jButton1.setText("%");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        jPanel2.add(jButton1);
+
+        jButton2.setText("CE");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        jPanel2.add(jButton2);
+
+        jButton3.setText("C");
+        jPanel2.add(jButton3);
+
+        jButton4.setText("<---");
+        jPanel2.add(jButton4);
+
+        jButton5.setText("1/x");
+        jPanel2.add(jButton5);
+
+        jButton6.setText("x2");
+        jPanel2.add(jButton6);
+
+        jButton7.setText("x(1/2)");
+        jPanel2.add(jButton7);
+
+        jButton8.setText("/");
+        jPanel2.add(jButton8);
+
+        jButton9.setText("7");
+        jPanel2.add(jButton9);
+
+        jButton10.setText("8");
+        jPanel2.add(jButton10);
+
+        jButton11.setText("9");
+        jPanel2.add(jButton11);
+
+        jButton12.setText("X");
+        jPanel2.add(jButton12);
+
+        jButton13.setText("4");
+        jPanel2.add(jButton13);
+
+        jButton14.setText("5");
+        jPanel2.add(jButton14);
+
+        jButton15.setText("6");
+        jPanel2.add(jButton15);
+
+        jButton16.setText("-");
+        jPanel2.add(jButton16);
+
+        jButton17.setText("1");
+        jPanel2.add(jButton17);
+
+        jButton18.setText("2");
+        jPanel2.add(jButton18);
+
+        jButton19.setText("3");
+        jButton19.addActionListener(this::jButton19ActionPerformed);
+        jPanel2.add(jButton19);
+
+        jButton20.setText("+");
+        jButton20.addActionListener(this::jButton20ActionPerformed);
+        jPanel2.add(jButton20);
+
+        jButton21.setText("+/-");
+        jPanel2.add(jButton21);
+
+        jButton22.setText("0");
+        jPanel2.add(jButton22);
+
+        jButton23.setText(",");
+        jPanel2.add(jButton23);
+
+        jButton24.setText("=");
+        jPanel2.add(jButton24);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tfValor)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfValorActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +210,31 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables
 }
