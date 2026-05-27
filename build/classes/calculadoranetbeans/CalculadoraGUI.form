@@ -28,7 +28,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="tfValor" max="32767" attributes="0"/>
-                  <Component id="jPanel2" pref="388" max="32767" attributes="0"/>
+                  <Component id="pTeclas" pref="388" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -40,7 +40,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="tfValor" min="-2" pref="99" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" pref="483" max="32767" attributes="0"/>
+              <Component id="pTeclas" pref="483" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -49,17 +49,22 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="tfValor">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value="0.00"/>
+        <Property name="actionCommand" type="java.lang.String" value="&lt;Not Set&gt;"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Texto"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfValorActionPerformed"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="pTeclas">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="4"/>
@@ -74,12 +79,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCEActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btC">
+        <Component class="javax.swing.JButton" name="btAC">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C"/>
+            <Property name="text" type="java.lang.String" value="AC"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btACActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btApagar">
@@ -195,10 +200,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt0ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btVirgula">
+        <Component class="javax.swing.JButton" name="btFechar">
           <Properties>
-            <Property name="text" type="java.lang.String" value=","/>
+            <Property name="text" type="java.lang.String" value="Fechar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btFecharActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btResultado">
           <Properties>

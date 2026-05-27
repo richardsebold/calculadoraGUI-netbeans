@@ -29,9 +29,9 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         tfValor = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
+        pTeclas = new javax.swing.JPanel();
         btCE = new javax.swing.JButton();
-        btC = new javax.swing.JButton();
+        btAC = new javax.swing.JButton();
         btApagar = new javax.swing.JButton();
         btDivisao = new javax.swing.JButton();
         bt7 = new javax.swing.JButton();
@@ -48,91 +48,95 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         btSoma = new javax.swing.JButton();
         btMaisMenos = new javax.swing.JButton();
         bt0 = new javax.swing.JButton();
-        btVirgula = new javax.swing.JButton();
+        btFechar = new javax.swing.JButton();
         btResultado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora POO");
 
+        tfValor.setEditable(false);
         tfValor.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         tfValor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         tfValor.setText("0.00");
+        tfValor.setActionCommand("<Not Set>");
+        tfValor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         tfValor.addActionListener(this::tfValorActionPerformed);
 
-        jPanel2.setLayout(new java.awt.GridLayout(5, 4));
+        pTeclas.setLayout(new java.awt.GridLayout(5, 4));
 
         btCE.setText("CE");
         btCE.addActionListener(this::btCEActionPerformed);
-        jPanel2.add(btCE);
+        pTeclas.add(btCE);
 
-        btC.setText("C");
-        btC.addActionListener(this::btCActionPerformed);
-        jPanel2.add(btC);
+        btAC.setText("AC");
+        btAC.addActionListener(this::btACActionPerformed);
+        pTeclas.add(btAC);
 
         btApagar.setText("<---");
-        jPanel2.add(btApagar);
+        pTeclas.add(btApagar);
 
         btDivisao.setText("/");
-        jPanel2.add(btDivisao);
+        pTeclas.add(btDivisao);
 
         bt7.setText("7");
         bt7.addActionListener(this::bt7ActionPerformed);
-        jPanel2.add(bt7);
+        pTeclas.add(bt7);
 
         bt8.setText("8");
         bt8.addActionListener(this::bt8ActionPerformed);
-        jPanel2.add(bt8);
+        pTeclas.add(bt8);
 
         bt9.setText("9");
         bt9.addActionListener(this::bt9ActionPerformed);
-        jPanel2.add(bt9);
+        pTeclas.add(bt9);
 
         btMultiplicacao.setText("X");
-        jPanel2.add(btMultiplicacao);
+        pTeclas.add(btMultiplicacao);
 
         bt4.setText("4");
         bt4.addActionListener(this::bt4ActionPerformed);
-        jPanel2.add(bt4);
+        pTeclas.add(bt4);
 
         bt5.setText("5");
         bt5.addActionListener(this::bt5ActionPerformed);
-        jPanel2.add(bt5);
+        pTeclas.add(bt5);
 
         bt6.setText("6");
         bt6.addActionListener(this::bt6ActionPerformed);
-        jPanel2.add(bt6);
+        pTeclas.add(bt6);
 
         btSubtracao.setText("-");
-        jPanel2.add(btSubtracao);
+        pTeclas.add(btSubtracao);
 
         bt1.setText("1");
         bt1.addActionListener(this::bt1ActionPerformed);
-        jPanel2.add(bt1);
+        pTeclas.add(bt1);
 
         bt2.setText("2");
         bt2.addActionListener(this::bt2ActionPerformed);
-        jPanel2.add(bt2);
+        pTeclas.add(bt2);
 
         bt3.setText("3");
         bt3.addActionListener(this::bt3ActionPerformed);
-        jPanel2.add(bt3);
+        pTeclas.add(bt3);
 
         btSoma.setText("+");
         btSoma.addActionListener(this::btSomaActionPerformed);
-        jPanel2.add(btSoma);
+        pTeclas.add(btSoma);
 
         btMaisMenos.setText("+/-");
-        jPanel2.add(btMaisMenos);
+        pTeclas.add(btMaisMenos);
 
         bt0.setText("0");
         bt0.addActionListener(this::bt0ActionPerformed);
-        jPanel2.add(bt0);
+        pTeclas.add(bt0);
 
-        btVirgula.setText(",");
-        jPanel2.add(btVirgula);
+        btFechar.setText("Fechar");
+        btFechar.addActionListener(this::btFecharActionPerformed);
+        pTeclas.add(btFechar);
 
         btResultado.setText("=");
-        jPanel2.add(btResultado);
+        pTeclas.add(btResultado);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,7 +146,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tfValor)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+                    .addComponent(pTeclas, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -151,7 +155,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(tfValor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+                .addComponent(pTeclas, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -210,9 +214,13 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         digita("9");
     }//GEN-LAST:event_bt9ActionPerformed
 
-    private void btCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCActionPerformed
+    private void btACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btACActionPerformed
         limpa();
-    }//GEN-LAST:event_btCActionPerformed
+    }//GEN-LAST:event_btACActionPerformed
+
+    private void btFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFecharActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btFecharActionPerformed
     
     private void limpa(){
         tfValor.setText("0.00");
@@ -222,7 +230,10 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         if(tfValor.getText().equals("0.00")){
             tfValor.setText(caractere);
         } else {
-            tfValor.setText(tfValor.getText().concat(caractere));
+    
+            if(tfValor.getText().length() <= 2) {
+                tfValor.setText(tfValor.getText().concat(caractere));
+            }
         }
         
     }
@@ -262,17 +273,17 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     private javax.swing.JButton bt7;
     private javax.swing.JButton bt8;
     private javax.swing.JButton bt9;
+    private javax.swing.JButton btAC;
     private javax.swing.JButton btApagar;
-    private javax.swing.JButton btC;
     private javax.swing.JButton btCE;
     private javax.swing.JButton btDivisao;
+    private javax.swing.JButton btFechar;
     private javax.swing.JButton btMaisMenos;
     private javax.swing.JButton btMultiplicacao;
     private javax.swing.JButton btResultado;
     private javax.swing.JButton btSoma;
     private javax.swing.JButton btSubtracao;
-    private javax.swing.JButton btVirgula;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel pTeclas;
     private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables
 }
