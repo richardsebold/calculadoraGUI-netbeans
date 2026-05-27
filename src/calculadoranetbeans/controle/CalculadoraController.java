@@ -1,13 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package calculadoranetbeans.controle;
 
-/**
- *
- * @author richa
- */
 public class CalculadoraController {
+    private Integer total;
+    
+    public Integer realizaOperacao(EnumOperacao operacao, Integer valor){
+        if(operacao.equals(EnumOperacao.SOMA)){
+            total += valor;
+        } else if(operacao.equals(EnumOperacao.SUBSTRACAO)){
+            total -= valor;
+        } else if(operacao.equals(EnumOperacao.MULTIPLICACAO)){
+            total *= valor;
+        } else if(operacao.equals(EnumOperacao.DIVISAO)){
+            total /= valor;
+        }
+        return total;
+    }
+    
+    public Double getTotal(){
+        return this.total;
+    }
+    
+    return void zerar(){
+        total = 0.0;
+    }
+    
     
 }

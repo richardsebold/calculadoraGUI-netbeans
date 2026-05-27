@@ -9,5 +9,8 @@ package calculadoranetbeans.enums;
  * @author richa
  */
 public enum EnumOperacao {
-    
+    SOMA,
+    SUBTRACAO,
+    MULTIPLICACAO,
+    DIVISAO;
 }
