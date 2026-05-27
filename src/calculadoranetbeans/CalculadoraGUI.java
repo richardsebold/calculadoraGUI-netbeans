@@ -1,15 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package calculadoranetbeans;
 
-/**
- *
- * @author richa
- */
+import java.text.NumberFormat;
+import java.text.ParseException;
+
 public class CalculadoraGUI extends javax.swing.JFrame {
-    
+
+    private CalculadoraController calculadoraController;
+    private EnumOperacao ultimaOperacao;
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculadoraGUI.class.getName());
 
     /**
@@ -17,6 +15,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
      */
     public CalculadoraGUI() {
         initComponents();
+        calculadoraController = new CalculadoraController();
     }
 
     /**
@@ -53,11 +52,12 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora POO");
+        setLocation(new java.awt.Point(0, 0));
 
         tfValor.setEditable(false);
         tfValor.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         tfValor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        tfValor.setText("0.00");
+        tfValor.setText("0");
         tfValor.setActionCommand("<Not Set>");
         tfValor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         tfValor.addActionListener(this::tfValorActionPerformed);
@@ -76,6 +76,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         pTeclas.add(btApagar);
 
         btDivisao.setText("/");
+        btDivisao.addActionListener(this::btDivisaoActionPerformed);
         pTeclas.add(btDivisao);
 
         bt7.setText("7");
@@ -91,6 +92,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         pTeclas.add(bt9);
 
         btMultiplicacao.setText("X");
+        btMultiplicacao.addActionListener(this::btMultiplicacaoActionPerformed);
         pTeclas.add(btMultiplicacao);
 
         bt4.setText("4");
@@ -106,6 +108,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         pTeclas.add(bt6);
 
         btSubtracao.setText("-");
+        btSubtracao.addActionListener(this::btSubtracaoActionPerformed);
         pTeclas.add(btSubtracao);
 
         bt1.setText("1");
@@ -136,6 +139,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         pTeclas.add(btFechar);
 
         btResultado.setText("=");
+        btResultado.addActionListener(this::btResultadoActionPerformed);
         pTeclas.add(btResultado);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,10 +164,11 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfValorActionPerformed
-        
+
     }//GEN-LAST:event_tfValorActionPerformed
 
     private void btCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCEActionPerformed
@@ -171,7 +176,9 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btCEActionPerformed
 
     private void btSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSomaActionPerformed
-        // TODO add your handling code here:
+        calculadoraController.realizaOperacao(EnumOperacao.SOMA, stringToInteger(tfValor.getText()));
+        ultimaOperacao = EnumOperacao.SOMA;
+        limpa();
     }//GEN-LAST:event_btSomaActionPerformed
 
     private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt3ActionPerformed
@@ -221,22 +228,62 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     private void btFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFecharActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btFecharActionPerformed
-    
-    private void limpa(){
-        tfValor.setText("0.00");
-    }
-    
-    private void digita(String caractere){
-        if(tfValor.getText().equals("0.00")){
-            tfValor.setText(caractere);
-        } else {
-    
-            if(tfValor.getText().length() <= 2) {
-                tfValor.setText(tfValor.getText().concat(caractere));
-            }
+
+    private void btSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubtracaoActionPerformed
+        calculadoraController.realizaOperacao(EnumOperacao.SUBTRACAO, stringToInteger(tfValor.getText()));
+        ultimaOperacao = EnumOperacao.SUBTRACAO;
+        limpa();
+    }//GEN-LAST:event_btSubtracaoActionPerformed
+
+    private void btMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiplicacaoActionPerformed
+        calculadoraController.realizaOperacao(EnumOperacao.MULTIPLICACAO, stringToInteger(tfValor.getText()));
+        ultimaOperacao = EnumOperacao.MULTIPLICACAO;
+        limpa();
+    }//GEN-LAST:event_btMultiplicacaoActionPerformed
+
+    private void btDivisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDivisaoActionPerformed
+        calculadoraController.realizaOperacao(EnumOperacao.DIVISAO, stringToInteger(tfValor.getText()));
+        ultimaOperacao = EnumOperacao.DIVISAO;
+        limpa();
+    }//GEN-LAST:event_btDivisaoActionPerformed
+
+    private void btResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btResultadoActionPerformed
+        Integer resultado = calculadoraController.realizaOperacao(ultimaOperacao, stringToInteger(tfValor.getText()));
+        tfValor.setText(integerToString(resultado));
+    }//GEN-LAST:event_btResultadoActionPerformed
+
+    private Integer stringToInteger(String numero) {
+        NumberFormat nf = NumberFormat.getInstance();
+        Integer dv = 0;
+        try {
+            dv = nf.parse(numero).intValue();
+        } catch (ParseException ex) {
+
         }
-        
+        return dv;
     }
+
+    private String integerToString(Integer numero) {
+        if (numero != null) {
+            return String.valueOf(numero);
+        }
+        return "";
+    }
+
+    private void limpa() {
+        tfValor.setText("0");
+    }
+
+    private void digita(String caractere) {
+        String textoAtual = tfValor.getText();
+
+        if (textoAtual.equals("0")) {
+            tfValor.setText(caractere);
+        } else if (textoAtual.length() < 3) {
+            tfValor.setText(textoAtual.concat(caractere));
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -286,4 +333,43 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     private javax.swing.JPanel pTeclas;
     private javax.swing.JTextField tfValor;
     // End of variables declaration//GEN-END:variables
+
+    private class CalculadoraController {
+
+        private Integer total;
+
+        public CalculadoraController() {
+            total = 0;
+        }
+
+        public Integer realizaOperacao(EnumOperacao operacao, Integer valor) {
+            if (operacao.equals(EnumOperacao.SOMA)) {
+                total += valor;
+            } else if (operacao.equals(EnumOperacao.SUBTRACAO)) {
+                total -= valor;
+            } else if (operacao.equals(EnumOperacao.MULTIPLICACAO)) {
+                total *= valor;
+            } else if (operacao.equals(EnumOperacao.DIVISAO)) {
+                total /= valor;
+            }
+            return total;
+        }
+
+        public Integer getTotal() {
+            return this.total;
+        }
+
+        public void zerar() {
+            total = 0;
+        }
+
+    }
+
+    public enum EnumOperacao {
+        SOMA,
+        SUBTRACAO,
+        MULTIPLICACAO,
+        DIVISAO;
+    }
+
 }
