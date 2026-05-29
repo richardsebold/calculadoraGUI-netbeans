@@ -314,6 +314,13 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
     private void btResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btResultadoActionPerformed
         Integer resultado = calculadoraController.realizaOperacao(ultimaOperacao, stringToInteger(tfValor.getText()));
+        if (resultado == null) {
+            tfValor.setText("Erro");
+            System.out.println("Erro: divisao por zero");
+            calculadoraController.zerar();
+            resultadoExibido = true;
+            return;
+        }
         tfValor.setText(integerToString(resultado));
         System.out.println("Resultado da operacao: " + integerToString(resultado));
         calculadoraController.preparaParaProximaOperacao();
@@ -429,6 +436,9 @@ public class CalculadoraGUI extends javax.swing.JFrame {
                 } else if (operacao.equals(EnumOperacao.MULTIPLICACAO)) {
                     total *= valor;
                 } else if (operacao.equals(EnumOperacao.DIVISAO)) {
+                    if (valor == 0) {
+                        return null;
+                    }
                     total /= valor;
                 }
             }
