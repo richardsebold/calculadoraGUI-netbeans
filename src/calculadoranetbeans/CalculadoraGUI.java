@@ -7,6 +7,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
     private CalculadoraController calculadoraController;
     private EnumOperacao ultimaOperacao;
+    private boolean resultadoExibido = false;
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculadoraGUI.class.getName());
 
@@ -315,6 +316,8 @@ public class CalculadoraGUI extends javax.swing.JFrame {
         Integer resultado = calculadoraController.realizaOperacao(ultimaOperacao, stringToInteger(tfValor.getText()));
         tfValor.setText(integerToString(resultado));
         System.out.println("Resultado da operacao: " + integerToString(resultado));
+        calculadoraController.preparaParaProximaOperacao();
+        resultadoExibido = true;
     }//GEN-LAST:event_btResultadoActionPerformed
 
     private Integer stringToInteger(String numero) {
@@ -337,12 +340,16 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
     private void limpa() {
         tfValor.setText("0");
+        resultadoExibido = false;
     }
 
     private void digita(String caractere) {
         String textoAtual = tfValor.getText();
 
-        if (textoAtual.equals("0")) {
+        if (resultadoExibido) {
+            tfValor.setText(caractere);
+            resultadoExibido = false;
+        } else if (textoAtual.equals("0")) {
             tfValor.setText(caractere);
         } else if (textoAtual.length() < 3) {
             tfValor.setText(textoAtual.concat(caractere));
@@ -435,6 +442,10 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
         public void zerar() {
             total = 0;
+            primeiraOperacao = true;
+        }
+
+        public void preparaParaProximaOperacao() {
             primeiraOperacao = true;
         }
 
