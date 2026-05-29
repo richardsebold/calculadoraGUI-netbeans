@@ -52,10 +52,13 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora POO");
+        setBackground(new java.awt.Color(60, 60, 60));
         setLocation(new java.awt.Point(0, 0));
 
         tfValor.setEditable(false);
-        tfValor.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        tfValor.setBackground(new java.awt.Color(60, 60, 60));
+        tfValor.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        tfValor.setForeground(new java.awt.Color(255, 255, 255));
         tfValor.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         tfValor.setText("0");
         tfValor.setActionCommand("<Not Set>");
@@ -64,80 +67,140 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
         pTeclas.setLayout(new java.awt.GridLayout(5, 4));
 
+        btCE.setBackground(new java.awt.Color(43, 43, 43));
+        btCE.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btCE.setForeground(new java.awt.Color(255, 255, 255));
         btCE.setText("CE");
         btCE.addActionListener(this::btCEActionPerformed);
         pTeclas.add(btCE);
 
+        btAC.setBackground(new java.awt.Color(43, 43, 43));
+        btAC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btAC.setForeground(new java.awt.Color(255, 255, 255));
         btAC.setText("AC");
         btAC.addActionListener(this::btACActionPerformed);
         pTeclas.add(btAC);
 
+        btApagar.setBackground(new java.awt.Color(43, 43, 43));
+        btApagar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btApagar.setForeground(new java.awt.Color(255, 255, 255));
         btApagar.setText("<---");
         pTeclas.add(btApagar);
 
+        btDivisao.setBackground(new java.awt.Color(43, 43, 43));
+        btDivisao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btDivisao.setForeground(new java.awt.Color(255, 255, 255));
         btDivisao.setText("/");
         btDivisao.addActionListener(this::btDivisaoActionPerformed);
         pTeclas.add(btDivisao);
 
+        bt7.setBackground(new java.awt.Color(60, 60, 60));
+        bt7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt7.setForeground(new java.awt.Color(255, 255, 255));
         bt7.setText("7");
         bt7.addActionListener(this::bt7ActionPerformed);
         pTeclas.add(bt7);
 
+        bt8.setBackground(new java.awt.Color(60, 60, 60));
+        bt8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt8.setForeground(new java.awt.Color(255, 255, 255));
         bt8.setText("8");
         bt8.addActionListener(this::bt8ActionPerformed);
         pTeclas.add(bt8);
 
+        bt9.setBackground(new java.awt.Color(60, 60, 60));
+        bt9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt9.setForeground(new java.awt.Color(255, 255, 255));
         bt9.setText("9");
         bt9.addActionListener(this::bt9ActionPerformed);
         pTeclas.add(bt9);
 
+        btMultiplicacao.setBackground(new java.awt.Color(43, 43, 43));
+        btMultiplicacao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btMultiplicacao.setForeground(new java.awt.Color(255, 255, 255));
         btMultiplicacao.setText("X");
         btMultiplicacao.addActionListener(this::btMultiplicacaoActionPerformed);
         pTeclas.add(btMultiplicacao);
 
+        bt4.setBackground(new java.awt.Color(60, 60, 60));
+        bt4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt4.setForeground(new java.awt.Color(255, 255, 255));
         bt4.setText("4");
         bt4.addActionListener(this::bt4ActionPerformed);
         pTeclas.add(bt4);
 
+        bt5.setBackground(new java.awt.Color(60, 60, 60));
+        bt5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt5.setForeground(new java.awt.Color(255, 255, 255));
         bt5.setText("5");
         bt5.addActionListener(this::bt5ActionPerformed);
         pTeclas.add(bt5);
 
+        bt6.setBackground(new java.awt.Color(60, 60, 60));
+        bt6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt6.setForeground(new java.awt.Color(255, 255, 255));
         bt6.setText("6");
         bt6.addActionListener(this::bt6ActionPerformed);
         pTeclas.add(bt6);
 
+        btSubtracao.setBackground(new java.awt.Color(43, 43, 43));
+        btSubtracao.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btSubtracao.setForeground(new java.awt.Color(255, 255, 255));
         btSubtracao.setText("-");
         btSubtracao.addActionListener(this::btSubtracaoActionPerformed);
         pTeclas.add(btSubtracao);
 
+        bt1.setBackground(new java.awt.Color(60, 60, 60));
+        bt1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt1.setForeground(new java.awt.Color(255, 255, 255));
         bt1.setText("1");
         bt1.addActionListener(this::bt1ActionPerformed);
         pTeclas.add(bt1);
 
+        bt2.setBackground(new java.awt.Color(60, 60, 60));
+        bt2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt2.setForeground(new java.awt.Color(255, 255, 255));
         bt2.setText("2");
         bt2.addActionListener(this::bt2ActionPerformed);
         pTeclas.add(bt2);
 
+        bt3.setBackground(new java.awt.Color(60, 60, 60));
+        bt3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt3.setForeground(new java.awt.Color(255, 255, 255));
         bt3.setText("3");
         bt3.addActionListener(this::bt3ActionPerformed);
         pTeclas.add(bt3);
 
+        btSoma.setBackground(new java.awt.Color(43, 43, 43));
+        btSoma.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btSoma.setForeground(new java.awt.Color(255, 255, 255));
         btSoma.setText("+");
         btSoma.addActionListener(this::btSomaActionPerformed);
         pTeclas.add(btSoma);
 
+        btMaisMenos.setBackground(new java.awt.Color(60, 60, 60));
+        btMaisMenos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btMaisMenos.setForeground(new java.awt.Color(255, 255, 255));
         btMaisMenos.setText("+/-");
         pTeclas.add(btMaisMenos);
 
+        bt0.setBackground(new java.awt.Color(60, 60, 60));
+        bt0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        bt0.setForeground(new java.awt.Color(255, 255, 255));
         bt0.setText("0");
         bt0.addActionListener(this::bt0ActionPerformed);
         pTeclas.add(bt0);
 
-        btFechar.setText("Fechar");
+        btFechar.setBackground(new java.awt.Color(60, 60, 60));
+        btFechar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btFechar.setForeground(new java.awt.Color(255, 255, 255));
+        btFechar.setText("FECHAR");
         btFechar.addActionListener(this::btFecharActionPerformed);
         pTeclas.add(btFechar);
 
+        btResultado.setBackground(new java.awt.Color(43, 43, 43));
+        btResultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btResultado.setForeground(new java.awt.Color(255, 255, 255));
         btResultado.setText("=");
         btResultado.addActionListener(this::btResultadoActionPerformed);
         pTeclas.add(btResultado);
@@ -222,6 +285,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_bt9ActionPerformed
 
     private void btACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btACActionPerformed
+        calculadoraController.zerar();
         limpa();
     }//GEN-LAST:event_btACActionPerformed
 
@@ -250,6 +314,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     private void btResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btResultadoActionPerformed
         Integer resultado = calculadoraController.realizaOperacao(ultimaOperacao, stringToInteger(tfValor.getText()));
         tfValor.setText(integerToString(resultado));
+        System.out.println("Resultado da operacao: " + integerToString(resultado));
     }//GEN-LAST:event_btResultadoActionPerformed
 
     private Integer stringToInteger(String numero) {
@@ -337,21 +402,30 @@ public class CalculadoraGUI extends javax.swing.JFrame {
     private class CalculadoraController {
 
         private Integer total;
+        boolean primeiraOperacao = true;
 
         public CalculadoraController() {
             total = 0;
         }
 
         public Integer realizaOperacao(EnumOperacao operacao, Integer valor) {
-            if (operacao.equals(EnumOperacao.SOMA)) {
-                total += valor;
-            } else if (operacao.equals(EnumOperacao.SUBTRACAO)) {
-                total -= valor;
-            } else if (operacao.equals(EnumOperacao.MULTIPLICACAO)) {
-                total *= valor;
-            } else if (operacao.equals(EnumOperacao.DIVISAO)) {
-                total /= valor;
+
+            if (primeiraOperacao) {
+                total = valor;
+                primeiraOperacao = false;
+            } else if (!primeiraOperacao) {
+                
+                if (operacao.equals(EnumOperacao.SOMA)) {
+                    total += valor;
+                } else if (operacao.equals(EnumOperacao.SUBTRACAO)) {
+                    total -= valor;
+                } else if (operacao.equals(EnumOperacao.MULTIPLICACAO)) {
+                    total *= valor;
+                } else if (operacao.equals(EnumOperacao.DIVISAO)) {
+                    total /= valor;
+                }
             }
+
             return total;
         }
 
@@ -361,6 +435,7 @@ public class CalculadoraGUI extends javax.swing.JFrame {
 
         public void zerar() {
             total = 0;
+            primeiraOperacao = true;
         }
 
     }
